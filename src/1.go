@@ -21,17 +21,28 @@ func Fn() {
         numbers = append(numbers, val)
     }
 
-    result := make(map[int]Exist)
+    firstResult := make(map[int]Exist)
+    secondResult := make(map[int]Exist)
     for i, first := range numbers {
         for j, second := range numbers {
             if i == j { continue }
             if first + second == ExpectedSum {
-                result[first * second] = Exist{}
+                firstResult[first * second] = Exist{}
+            }
+
+            for y, third := range numbers {
+                if j == y || i == y { continue }
+                if first + second + third == ExpectedSum {
+                    secondResult[first * second * third] = Exist{}
+                }
             }
         }
     }
-    for number := range result {
-        log.Println(number)
+    for number := range firstResult {
+        log.Println("First", number)
+    }
+    for number := range secondResult {
+        log.Println("Second", number)
     }
 }
 
