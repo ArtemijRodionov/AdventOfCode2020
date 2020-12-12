@@ -6,28 +6,37 @@ import (
 	"os"
 )
 
-type Empty struct{}
-
 func Fn() {
 	scanner := bufio.NewScanner(os.Stdin)
     raw := ""
-    count := 0
-    answers := make(map[rune]Empty)
+    anyCount := 0
+    allCount := 0
+    groupSize := 0
+    yes := make(map[rune]int)
 	for {
         isOk := scanner.Scan()
         if isOk {
             raw = scanner.Text()
             for _, r := range raw {
-                answers[r] = Empty{}
+                yes[r]++
             }
         }
 
         if raw == "" || !isOk {
-            count += len(answers)
-            answers = make(map[rune]Empty)
+            for _, count := range yes {
+                if count == groupSize {
+                    allCount++
+                }
+            }
+            anyCount += len(yes)
+            groupSize = 0
+            yes = make(map[rune]int)
+        } else {
+            groupSize++
         }
 
         if !isOk { break }
 	}
-    log.Println(count)
+    log.Println(anyCount)
+    log.Println(allCount)
 }
