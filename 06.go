@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	raw := ""
 	anyCount := 0

@@ -121,7 +121,7 @@ func loopTwo(v HH) HH {
 	}
 }
 
-func Fn() {
+func main() {
 	code, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		log.Fatal(err.Error())

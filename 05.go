@@ -21,7 +21,7 @@ func parse(s string, lo, hi int, loChar, hiChar rune) int {
 	return lo
 }
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	maxId := 0
 	idPass := make(map[int]struct{})

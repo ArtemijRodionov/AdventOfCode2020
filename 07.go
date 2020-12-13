@@ -46,7 +46,7 @@ func countBags(idx Index, name string) int {
 	return result
 }
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	innerOuter := make(Index)
 	outerInner := make(Index)

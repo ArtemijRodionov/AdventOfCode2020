@@ -14,7 +14,7 @@ func fail(err error) {
 	}
 }
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	validNumber := 0
 	validNumber2 := 0

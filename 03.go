@@ -8,7 +8,7 @@ import (
 
 type Slope struct{ X, Y int }
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	var grid []string
 	for scanner.Scan() {

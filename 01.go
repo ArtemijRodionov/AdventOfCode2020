@@ -11,7 +11,7 @@ type Exist struct{}
 
 const ExpectedSum = 2020
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	var numbers []int
 	for scanner.Scan() {

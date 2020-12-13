@@ -74,7 +74,7 @@ func (s1 Set) isSubset(s2 Set) bool {
 	return true
 }
 
-func Fn() {
+func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	spec := NewSet([]string{
 		"byr",
